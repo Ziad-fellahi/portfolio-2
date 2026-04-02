@@ -11,6 +11,7 @@ const PORTFOLIO = {
   identity: {
     name: "Ziad FELLAHI",
     title: "Étudiant en BTS SIO SLAM",
+    tagline: "Je développe des solutions web modernes, performantes et orientées sécurité.",
     email: "ziad.fellahi@outlook.fr",
     github: "https://github.com/Ziad-fellahi",
     linkedin: "https://linkedin.com/in/ziad-fellahi"
