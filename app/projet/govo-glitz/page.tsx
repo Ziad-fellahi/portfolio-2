@@ -7,6 +7,27 @@ import { useState } from 'react';
 
 const GALLERY_CATEGORIES = [
   {
+    id: "client",
+    name: "Frontend Client",
+    images: [
+      "/glitz/Client/home-client.png",
+      "/glitz/Client/capture-client-inscription.png",
+      "/glitz/Client/Capture d'écran 2026-04-02 135254.jpg",
+      "/glitz/Client/Capture d'écran 2026-04-02 135332.jpg",
+      "/glitz/Client/Capture d'écran 2026-04-02 135452.jpg"
+    ]
+  },
+  {
+    id: "Glitz",
+    name: "Glitz",
+    images: [
+      "/glitz/giltz logiciel secretairez/Capture d'écran 2026-04-02 134818.jpg",
+      "/glitz/giltz logiciel secretairez/Capture d'écran 2026-04-02 134859.jpg",
+      "/glitz/giltz logiciel secretairez/Capture d'écran 2026-04-02 135008.jpg",
+      "/glitz/giltz logiciel secretairez/Capture d'écran 2026-04-02 135153.jpg"
+    ]
+  },
+  {
     id: "admin",
     name: "Frontend Admin",
     images: [
@@ -19,14 +40,6 @@ const GALLERY_CATEGORIES = [
       "/glitz/paiement/paiementduneautoecole.png", 
       "/glitz/paiement/historiquepaiement.png", 
       "/glitz/Admin/Journalactivité.png"
-    ]
-  },
-  {
-    id: "client",
-    name: "Frontend Client",
-    images: [
-      "/glitz/Client/home-client.png",
-      "/glitz/Client/capture-client-inscription.png"
     ]
   },
   {
@@ -101,9 +114,7 @@ export default function ProjetGovoGlitz() {
             Retour aux projets
           </Link>
           
-          <div className="flex items-center gap-8">
-            <img src="https://www.govo.fr/_next/static/media/logo.9d31ccd6.svg?dpl=dpl_Cd3gsQpdYEPU3DkhWiTam2spPX12" alt="GOVO Logo" className="h-10 md:h-12 object-contain" />
-            <span className="text-gray-300 font-light text-4xl">|</span>
+          <div className="flex items-center">
             <img src="https://www.glitz.fr/logo.svg?dpl=dpl_Bo7vnJLZX6R4kFK9hBc9Jfmspb2Q" alt="GLITZ Logo" className="h-12 md:h-16 object-contain" />
           </div>
         </div>

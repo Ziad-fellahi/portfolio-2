@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, Briefcase, Code, Shield, Rss, Github, Linkedin, Mail, ExternalLink, CheckCircle, Rocket, Lock, Cloud, Terminal, Database, Globe, Menu, X, ChevronDown, Star, Zap, Layers, Waves, Heart, Cpu, Award, Sparkles } from 'lucide-react';
+import { GraduationCap, Briefcase, Code, Github, Linkedin, Mail, ExternalLink, CheckCircle, Rocket, Terminal, Database, Globe, Menu, X, ChevronDown, Star, Zap, Layers, Waves, Heart, Cpu, Award, Sparkles } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -20,7 +20,7 @@ const PORTFOLIO = {
   },
 
   skills: {
-    languages: ["JavaScript", "Python", "PHP", "Java"],
+    languages: ["HTML", "CSS", "JavaScript", "Python", "PHP", "Java"],
     frameworks: ["React", "Next.js", "Node.js", "NestJS"],
     tools: ["Git", "Docker", "MongoDB"]
   },
@@ -98,7 +98,7 @@ const PORTFOLIO = {
   projets: [
     {
       title: "GOVO x GLITZ",
-      description: "Back-office et portail client pour un réseau d'auto-écoles, avec gestion des utilisateurs, paiements, statistiques et déploiement de production.",
+      description: "Développement et mise en production d'une plateforme SaaS (Software as a Service) en mode B2B, destinée à digitaliser l'exploitation des auto-écoles. Le service est proposé sous forme d'abonnement, permettant aux gérants de piloter l'intégralité de leur activité via une interface unique.",
       technologies: ["Next.js", "React", "NestJS", "MongoDB"],
       github: "https://github.com/Ziad-fellahi",
       href: "/projet/govo-glitz",
@@ -116,44 +116,6 @@ const PORTFOLIO = {
     }
   ],
 
-  veille: [
-    {
-      title: "Ransomwares",
-      description: "Veille sur l'évolution des ransomwares, leurs vecteurs d'intrusion et les stratégies de prévention/résilience.",
-      icon: Shield,
-      color: "rose",
-      size: "large"
-    },
-    {
-      title: "Zero Trust",
-      description: "Étude des principes Zero Trust pour limiter la confiance implicite et sécuriser chaque accès.",
-      icon: Lock,
-      color: "purple",
-      size: "small"
-    },
-    {
-      title: "DevSecOps",
-      description: "Intégration de la sécurité dans le cycle DevOps : automatisation des contrôles et amélioration continue.",
-      icon: Terminal,
-      color: "blue",
-      size: "small"
-    },
-    {
-      title: "Cloud Security",
-      description: "Bonnes pratiques de sécurisation cloud : gestion des identités, configuration, supervision et conformité.",
-      icon: Cloud,
-      color: "cyan",
-      size: "medium"
-    }
-  ],
-
-  sources: [
-    { name: "ANSSI", url: "https://www.ssi.gouv.fr" },
-    { name: "CERT-FR", url: "https://www.cert.ssi.gouv.fr" },
-    { name: "Le Monde Informatique", url: "https://lemondeinformatique.fr" },
-    { name: "Korben", url: "https://korben.info" },
-    { name: "HackerNews", url: "https://news.ycombinator.com" }
-  ]
 };
 
 // ========== NAVBAR STICKY AVEC GLASSMORPHISM ==========
@@ -194,13 +156,13 @@ function Navbar() {
 
           {/* Menu Desktop */}
           <div className="hidden md:flex items-center gap-8">
-            {['hero', 'parcours', 'projets', 'competences', 'veille', 'contact'].map((section) => (
+            {['hero', 'parcours', 'projets', 'competences', 'presentation', 'contact'].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollTo(section)}
                 className="text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors capitalize"
               >
-                {section === 'hero' ? 'Accueil' : section === 'competences' ? 'Compétences' : section}
+                {section === 'hero' ? 'Accueil' : section === 'competences' ? 'Compétences' : section === 'presentation' ? 'Présentation' : section}
               </button>
             ))}
           </div>
@@ -244,13 +206,13 @@ function Navbar() {
         {isOpen && (
           <div className="md:hidden mt-4 p-6 bg-white/95 backdrop-blur-xl rounded-3xl border border-gray-100 shadow-lg">
             <div className="flex flex-col gap-4">
-              {['hero', 'parcours', 'projets', 'competences', 'veille', 'contact'].map((section) => (
+              {['hero', 'parcours', 'projets', 'competences', 'presentation', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollTo(section)}
                   className="text-left text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors capitalize py-2"
                 >
-                  {section === 'hero' ? 'Accueil' : section === 'competences' ? 'Compétences' : section}
+                  {section === 'hero' ? 'Accueil' : section === 'competences' ? 'Compétences' : section === 'presentation' ? 'Présentation' : section}
                 </button>
               ))}
               <div className="pt-4 border-t border-gray-100 flex gap-3">
@@ -533,6 +495,8 @@ function Projets() {
 // ========== COMPÉTENCES BENTO BOX ==========
 function Competences() {
   const TECH_LOGOS: Record<string, string> = {
+    HTML: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    CSS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
     JavaScript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
     Python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     PHP: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
@@ -635,68 +599,27 @@ function Competences() {
   );
 }
 
-// ========== VEILLE SECTION ==========
-function Veille() {
+// ========== PRESENTATION PDF SECTION ==========
+function PresentationPdfSection() {
   return (
-    <section id="veille" className="py-20 px-6 bg-[#F9F9FB]">
+    <section id="presentation" className="py-20 px-6 bg-[#F9F9FB]">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="mb-12">
-          <div className="flex items-center gap-4 mb-3">
-            <div className="p-3 bg-white border border-[#EDEDF2] rounded-2xl">
-              <Shield className="w-6 h-6 text-gray-900" />
-            </div>
-            <div>
-              <h2 className="text-4xl font-black text-[#1A1A1A]">
-                Veille Technologique
-              </h2>
-              <p className="text-base text-[#575757] mt-1">
-                Cybersécurité
-              </p>
-            </div>
+        <div className="bg-white border border-[#EDEDF2] rounded-[24px] p-8 md:p-12 shadow-sm text-center">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gray-100 mb-5">
+            <ExternalLink className="w-6 h-6 text-gray-900" />
           </div>
-        </div>
-
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {PORTFOLIO.veille.map((item, index) => {
-            const IconComponent = item.icon;
-            
-            return (
-              <div 
-                key={index}
-                className="bg-white border border-[#EDEDF2] rounded-[20px] p-8 hover:shadow-lg hover:border-gray-300 transition-all"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-gray-50 rounded-2xl shrink-0">
-                    <IconComponent className="w-6 h-6 text-gray-900" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">{item.title}</h3>
-                    <p className="text-base text-[#575757] leading-relaxed">{item.description}</p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Sources */}
-        <div className="bg-white border border-[#EDEDF2] rounded-[20px] p-8">
-          <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-4">Sources</h3>
-          <div className="flex flex-wrap gap-3">
-            {PORTFOLIO.sources.map((source, index) => (
-              <a
-                key={index}
-                href={source.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-gray-50 border border-[#EDEDF2] rounded-xl hover:border-gray-300 transition-all text-sm font-semibold text-gray-700 hover:text-gray-900 flex items-center gap-2"
-              >
-                {source.name}
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            ))}
+          <h2 className="text-4xl font-black text-[#1A1A1A] mb-3">Présentation Veille IA</h2>
+          
+          <div className="flex items-center justify-center">
+            <a
+              href="/glitz/veille/presentation-ia-outils-code.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-900 text-white font-semibold hover:bg-gray-800 transition-colors"
+            >
+              Voir la présentation PDF
+              <ExternalLink className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </div>
@@ -771,7 +694,7 @@ export default function Home() {
         <Parcours />
         <Projets />
         <Competences />
-        <Veille />
+        <PresentationPdfSection />
         <Contact />
       </main>
     </div>
