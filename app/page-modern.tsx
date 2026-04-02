@@ -8,7 +8,7 @@ const PORTFOLIO = {
   identity: {
     name: "Ziad FELLAHI",
     title: "Développeur Full-Stack",
-    subtitle: "ÉTUDIANT BTS SIO SLAM",
+    subtitle: "Étudiant en BTS SIO SLAM",
     tagline: "Je conçois des solutions digitales robustes et sécurisées",
     description: "Passionné par le développement logiciel et la cybersécurité",
     email: "ziad.fellahi@exemple.com",
@@ -281,7 +281,7 @@ function Hero() {
       <div className="max-w-5xl mx-auto text-center relative z-10">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100/50 backdrop-blur-sm border border-indigo-200/50 rounded-full mb-8">
           <Star className="w-4 h-4 text-indigo-600" />
-          <span className="text-sm font-bold text-indigo-700 tracking-wide">
+          <span className="text-[7px] font-bold text-indigo-700 tracking-wide">
             {PORTFOLIO.identity.subtitle}
           </span>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, Briefcase, Code, Github, Linkedin, Mail, ExternalLink, CheckCircle, Rocket, Terminal, Database, Globe, Menu, X, ChevronDown, Star, Zap, Layers, Waves, Heart, Cpu, Award, Sparkles } from 'lucide-react';
+import { GraduationCap, Briefcase, Code, Github, Linkedin, Mail, ExternalLink, CheckCircle, Rocket, Terminal, Database, Globe, Menu, X, ChevronDown, Zap, Layers, Waves, Heart, Cpu, Award, Sparkles } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -10,10 +10,7 @@ import { ArcGalleryHero } from '@/components/ui/arc-gallery-hero-component';
 const PORTFOLIO = {
   identity: {
     name: "Ziad FELLAHI",
-    title: "Développeur Full-Stack",
-    subtitle: "ÉTUDIANT BTS SIO SLAM",
-    tagline: "Je développe des solutions web modernes, performantes et orientées sécurité.",
-    description: "Passionné par l'ingénierie logicielle, l'architecture web et la cybersécurité appliquée.",
+    title: "Étudiant en BTS SIO SLAM",
     email: "ziad.fellahi@outlook.fr",
     github: "https://github.com/Ziad-fellahi",
     linkedin: "https://linkedin.com/in/ziad-fellahi"
@@ -256,13 +253,6 @@ function Hero() {
     <div id="hero" className="relative pt-20">
       <ArcGalleryHero images={techImages}>
         <div className="text-center max-w-2xl px-6 opacity-0 animate-fade-in" style={{ animationDelay: '800ms', animationFillMode: 'forwards' }}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#EDEDF2] rounded-full mb-6 shadow-sm">
-            <Star className="w-4 h-4 text-gray-600" />
-            <span className="text-xs font-semibold text-gray-600 tracking-wide">
-              {PORTFOLIO.identity.subtitle}
-            </span>
-          </div>
-
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#1A1A1A] mb-4">
             {PORTFOLIO.identity.name}
           </h1>
