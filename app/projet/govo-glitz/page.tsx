@@ -536,14 +536,7 @@ export default function ProjetGovoGlitz() {
               <h3 className="text-lg font-bold text-gray-900 sm:hidden">Galerie</h3>
             </div>
             <div className="flex items-center gap-2">
-              {pdfCategory && pdfItemIndex >= 0 && (
-                <button
-                  onClick={handleShowPdf}
-                  className="px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm font-semibold"
-                >
-                  Voir le PDF
-                </button>
-              )}
+              
               <button 
                 onClick={() => setIsGalleryOpen(false)}
                 className="p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors text-gray-900"

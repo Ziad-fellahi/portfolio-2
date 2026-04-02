@@ -20,10 +20,9 @@ const PORTFOLIO = {
   },
 
   skills: {
-    languages: ["JavaScript", "TypeScript", "Python", "PHP", "Java"],
-    frameworks: ["React", "Next.js", "Node.js", "Express", "NestJS"],
-    tools: ["Git", "Docker", "PostgreSQL", "MongoDB", "Figma"],
-    concepts: ["REST API", "JWT", "RBAC", "CI/CD", "Agile/Scrum"]
+    languages: ["JavaScript", "Python", "PHP", "Java"],
+    frameworks: ["React", "Next.js", "Node.js", "NestJS"],
+    tools: ["Git", "Docker", "MongoDB"]
   },
 
   parcours: [
@@ -535,20 +534,16 @@ function Projets() {
 function Competences() {
   const TECH_LOGOS: Record<string, string> = {
     JavaScript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    TypeScript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     Python: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     PHP: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
     Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
     React: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     "Next.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
     "Node.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-    Express: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
     NestJS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg",
     Git: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     Docker: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-    PostgreSQL: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
     MongoDB: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-    Figma: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
   };
 
   return (
@@ -634,23 +629,6 @@ function Competences() {
             </div>
           </div>
 
-          {/* Concepts */}
-          <div className="md:col-span-2 bg-white border border-[#EDEDF2] rounded-[20px] p-8">
-            <div className="flex items-center gap-3 mb-6">
-              <Rocket className="w-5 h-5 text-gray-400" />
-              <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wide">Concepts</h3>
-            </div>
-            <div className="grid grid-cols-3 gap-3">
-              {PORTFOLIO.skills.concepts.map((concept, idx) => (
-                <div key={idx} className="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors group">
-                  <Rocket className="w-6 h-6 text-gray-400 mb-2 group-hover:text-gray-900 transition-colors" />
-                  <span className="text-xs font-semibold text-gray-700 text-center">
-                    {concept}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
